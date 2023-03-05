@@ -593,7 +593,7 @@ public final class StdDraw implements ActionListener, MouseListener, MouseMotion
     private static String windowTitle = DEFAULT_WINDOW_TITLE;
 
     // default canvas size is DEFAULT_SIZE-by-DEFAULT_SIZE
-    private static final int DEFAULT_SIZE = 512;
+    private static final int DEFAULT_SIZE = 1024;
     private static int width  = DEFAULT_SIZE;
     private static int height = DEFAULT_SIZE;
 

@@ -1,3 +1,6 @@
 # RangoliGenerator
 
-I can't draw so i made this
+### I can't draw so I made this
+
+
+credit to Anonymous for providing the base patterns.
