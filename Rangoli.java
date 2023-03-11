@@ -2,25 +2,34 @@ import java.util.Scanner;
 
 public class Rangoli {
 
-    private static void drawTriangle(int n, double x, double y, double size) {
-            if (n == 0) { // base case
-                StdDraw.polygon(new double[]{x, x - size/2, x + size/2}, new double[]{y, y + size/2 * Math.sqrt(3), y + size/2 * Math.sqrt(3)});
-            } else {
-                drawTriangle(n-1, x, y, size/2); // top triangle
-                drawTriangle(n-1, x - size/4, y - size/2 * Math.sqrt(3)/2, size/2); // bottom left triangle
-                drawTriangle(n-1, x + size/4, y - size/2 * Math.sqrt(3)/2, size/2); // bottom right triangle
-            }
+    private static void drawRangoli(int n, double angle, double angleIncrement, double lineLength, double lineLengthIncrement) {
+        double x, y;
+        double prevX = 0.5, prevY = 0.5;
+        for (int i = 0; i < n; i++) {
+            x = lineLength*Math.cos(Math.toRadians(angle));
+            y = lineLength*Math.sin(Math.toRadians(angle));
+            StdDraw.polygon(new double[]{prevX, x}, new double[]{prevY, y});
+            lineLength += lineLengthIncrement;
+            angle -= angleIncrement;
+        }
     }
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        double x = 0.5;
-        double y = 0.5;
-        double size = 0.5;
 
+        System.out.printf("Enter the starting line length: ");
+        double lineLength = scan.nextDouble();
+        System.out.printf("Enter the line length increment: ");
+        double lineLengthIncrement = scan.nextDouble();
+        System.out.printf("Enter the starting angle: ");
+        int angle = scan.nextInt();
+        System.out.printf("Enter the angle increment: ");
+        int angleIncrement = scan.nextInt();
         System.out.printf("Enter the number of layers: ");
         int layers = scan.nextInt();
 
-        drawTriangle(layers, x, y, size);
+        //drawRangoli(layers, angle, angleIncrement, lineLength, lineLengthIncrement);
+
+        StdDraw.polygon(new double[]{0.5, 0.6*Math.cos(Math.toRadians(10))}, new double[]{0.5, 0.6*Math.sin(Math.toRadians(10))});
     }
 }
