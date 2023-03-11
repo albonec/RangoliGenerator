@@ -28,8 +28,6 @@ public class Rangoli {
         System.out.printf("Enter the number of layers: ");
         int layers = scan.nextInt();
 
-        //drawRangoli(layers, angle, angleIncrement, lineLength, lineLengthIncrement);
-
-        StdDraw.polygon(new double[]{0.5, 0.6*Math.cos(Math.toRadians(10))}, new double[]{0.5, 0.6*Math.sin(Math.toRadians(10))});
+        drawRangoli(layers, angle, angleIncrement, lineLength, lineLengthIncrement);
     }
 }
